@@ -1,0 +1,21 @@
+Intellij Files
+*.iml
+.idea
+
+# Eclipse Files
+.classpath
+.project
+
+# Gradle Files
+.gradle
+build/
+classes/
+/out
+
+# Java files
+*.class
+
+# OS Files
+.DS_Store
+Thumbs.db
+
