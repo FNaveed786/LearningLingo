@@ -1,6 +1,8 @@
 <%@tag description="Overall Page template" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@attribute name="head" fragment="true" %>
+<%@attribute name="nav" fragment="true" %>
+<%@attribute name="footer" fragment="true" %>
 
 <html>
 <head>
@@ -9,29 +11,19 @@
     <link href="/css/global.css" rel="stylesheet" />
     <script type="text/javascript" src="<c:url value="/webjars/jquery/3.0.0-alpha1/jquery.min.js" />"></script>
     <script type="text/javascript" src="<c:url value="/webjars/bootstrap/3.3.5/js/bootstrap.min.js" />"></script>
-    <title>Learning Lingo</title>
+    <script type="text/javascript" src="/js/maxlength.js"></script>
     <jsp:invoke fragment="head"/>
 </head>
 
 <body>
-<div id="page">
-    <div id="nav">
-
-    </div>
-    <div id="body">
-        <div class="col-sm-3">
-            <ul class="nav nav-pills nav-stacked">
-                <li role="presentation"><img src="/assets/logo.PNG" class="img-responsive" style="width:128px;height:128px"/></li>
-                <li role="presentation" class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-                <li role="presentation"><a href="${pageContext.request.contextPath}/edit">Edit Set</a></li>
-                <li role="presentation"><a href="#">Practice Mode</a></li>
-            </ul>
-        </div>
-        <jsp:doBody/>
-    </div>
-    <div id="pagefooter">
-
-    </div>
+<div id="nav">
+    <jsp:invoke fragment="nav"/>
+</div>
+<div id="body">
+    <jsp:doBody/>
+</div>
+<div id="pagefooter">
+    <jsp:invoke fragment="footer"/>
 </div>
 </body>
 </html>
